@@ -1,7 +1,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-#include "sensor-lib-cur/lib_cur.h"
+#include "lib_cur.h"
 #include "lib_cur_config.h"
 
 //TODO: compute it..
