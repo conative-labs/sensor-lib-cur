@@ -2,7 +2,11 @@
 #include <stdlib.h>
 
 #include "lib_cur.h"
+#ifdef TEST
+#include "lib_cur_config_test.h"
+#else
 #include "lib_cur_config.h"
+#endif
 
 //TODO: compute it..
 #define MAX_SAMPLES_PER_CYCLE 600
@@ -41,7 +45,7 @@ void lib_cur_cmd(lib_cur_cmd_t cmd, void *buffer)
 {
   int samples_per_cycle;
   lib_cur_current_t cur_value;
-	switch(cmd) {
+  switch(cmd) {
   case cur_read:
     samples_per_cycle = ADC_THROUGHPUT_PUT / params->ac_freq;
     cur_value = calculate_current_rms(5 * samples_per_cycle);
